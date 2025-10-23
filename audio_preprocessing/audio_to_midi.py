@@ -71,7 +71,7 @@ class AudioToMIDIConverter:
         plt.grid(True)
         
         plt.tight_layout()
-        plt.savefig("audio_processing/melody_separation.png", dpi=300, bbox_inches='tight')
+        plt.savefig("audio_preprocessing/melody_separation.png", dpi=300, bbox_inches='tight')
         plt.show()
     
     def convert_to_midi(self, audio_file_path, output_midi_path=None):
@@ -169,7 +169,7 @@ def main():
     converter = AudioToMIDIConverter()
     
     # Example with your sample file
-    audio_file = "audio-processing/mp3-files/sample-test-1.mp3"
+    audio_file = "audio_preprocessing/mp3-files/sample-test-1.mp3"
     
     if os.path.exists(audio_file):
         print(f"Processing: {audio_file}")
@@ -177,7 +177,7 @@ def main():
         # Process with melody extraction
         results = converter.process_audio_to_midi(
             audio_file_path=audio_file,
-            output_dir="audio-processing/midi_output",
+            output_dir="audio_preprocessing/midi_output",
             extract_melody=True
         )
         
